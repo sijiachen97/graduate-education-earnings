@@ -1,42 +1,51 @@
-# Graduate education and initial labor market conditions
+# Graduate education: code guide
+
+All executable research code is under `code/`. `code/data_process/` constructs inputs; `code/analysis/` estimates models and produces tables/figures. Run commands from the repository root. The original research folders are unchanged.
+
+The code is selected against the supplied final paper/slides and their production dependencies, rather than copied as an archive of every experiment. [Source manifest](SOURCE_MANIFEST.json) records original filenames, selected notebook cells, hashes and adaptations. [Source review](SOURCE_REVIEW.json) lists the reviewed source inventory and inclusion/exclusion decisions. No microdata, model caches or saved notebook outputs are shared.
+
+## Final paper and corrected source selection
+
+Reference: the March 2025 final paper, `Sijia_Chen_Graduate_Education.pdf` / `final-paper/Sijia_Chen_3Y_Paper_Revision.pdf`.
+
+The main source is **`look into-regressions-UR-version.ipynb`**, not `regressions.ipynb`. Its final grouped specification reproduces Table 3: **169,092 observations**, early-career bachelor's coefficient **−0.0190876725**, and master's interaction **+0.0243328957**. The consolidated main notebook was executed against the existing local analysis input and reproduces these values.
+
+## Run order and paper correspondence
+
+Open the notebooks in order. Their first cell sets the working directory to the repository root.
+
+| Step | Included notebook | Input → output / paper result |
+| --- | --- | --- |
+| 1 | `code/data_process/01_import_harmonize_nscg.ipynb` | SAS waves → `data-all-waves/update_merged_nscg_2010_to_2021.csv` |
+| 2 | `code/data_process/02_link_respondents.ipynb` | Harmonized waves → `data-all-waves/matched_df.csv`, including reconstructed `assigned_id` |
+| 3 | `code/data_process/03_build_analysis_data.ipynb` | Original cells 0–16 of `regressions-for-non-repeated-respondents.ipynb`: matched data → `data-all-waves/df_final.csv` |
+| 4 | `code/analysis/01_main_earnings.ipynb` | Original production cells 0, 1, 3, 5, 8, 9, 19 of the final UR-version notebook: Table 3 / Figure 3 |
+| 5 | `code/analysis/02_selection_composition.ipynb` | Attainment probit, cohort/composition plots and gender subgroup check: Table 2, Figures 1–2, Appendix A2 |
+| 6 | `code/analysis/03_descriptive_tables.ipynb` | Cohort counts and respondent frequency: Table 1 / Appendix A1 |
+| 7 | `code/analysis/04_field_transitions.ipynb` | Field-transition pooled regressions and residual plots |
+| 8 | `code/analysis/05_field_heterogeneity.ipynb` | Field-specific models and plots: Table 4, Figure 4 and Appendix Figure A1 |
+
+Place the NSCG SAS files and unemployment CSVs in `data-all-waves/`. The preparation notebook expects `epcg{year}.sas7bdat`; follow its exact filename dictionary. The two output handoffs above are now explicitly written to the directory read by the following notebook. No replacement cleaning rules or estimator have been introduced.
+
+The preparation block preserves the original degree-specific `gradur` fields for compatibility. The **final main regression merges and uses the bachelor's-graduation `UR` for both education groups**. It uses survey-year and experience-bin fixed effects and individual-clustered standard errors.
+
+## Replication notes
+
+- Main-regression validation started from the existing `df_final.csv`; the complete raw-wave matching pipeline has not been rerun. Source preparation, linkage and export stages are now present rather than left as an unexplained file handoff.
+- The original grouped-plot function approximates the master's confidence band without the covariance between the two coefficients. It is retained to preserve the published Figure 3 source; it should not be used to claim a correctly computed confidence interval for the sum. Table 3 estimation itself is unchanged.
+- The original gender-subgroup block reversed the male/female variable labels. The shared copy corrects the labels; Appendix A2 labels/results require reconciliation. The pooled Table 2 model is unchanged.
+- Notebook outputs are cleared. The code may print diagnostics when run locally; do not commit respondent previews or generated data.
 
 ## Source data: where to download
 
-Links checked November 4, 2026.
+- [NCSES public-use microdata](https://ncses.nsf.gov/explore-data/microdata): select National Survey of College Graduates, waves 2010, 2013, 2015, 2017, 2019 and 2021; download SAS files and codebooks.
+- [FRED CGBD16O](https://fred.stlouisfed.org/series/CGBD16O): BLS unemployment rate for college graduates with a bachelor's degree, age 16 and over. This is the exact series named in paper footnote 2 and the final notebook. Save the downloaded CSV as `ur_ba_16y.csv`; code averages the observations by calendar year.
+- [FRED CGMD16O](https://fred.stlouisfed.org/series/CGMD16O): master's-degree series read by the original intermediate-data builder, saved as `ur_ma_16y.csv`. It is not the final main regression's shock variable.
 
-| Source | Download instructions | Preparation still required |
-| --- | --- | --- |
-| National Survey of College Graduates | [NCSES public-use microdata](https://ncses.nsf.gov/explore-data/microdata), select NSCG. Download the 2010, 2013, 2015, 2017, 2019, and 2021 survey files and their codebooks. The [NSCG survey page](https://ncses.nsf.gov/surveys/national-survey-college-graduates) provides survey documentation and access to earlier cycles. | Harmonize variables and missing-value codes across waves, construct degree/sample variables, and reproduce the project's respondent linkage. |
-| Unemployment at bachelor's graduation | [BLS CPS labor-force statistics](https://www.bls.gov/cps/) is the source portal to consult when documenting the original series. | The exact series ID, population/age definition, seasonal adjustment, annual aggregation, and mapping into `UR` still require verification against the original preparation code. No replacement series is prescribed here. |
+Preserve the original unemployment CSV vintage when reproducing published estimates; a fresh download may contain revisions.
 
-The current CLI expects an already prepared CSV, **not** a raw NSCG download. `assigned_id` is a project-generated identifier rather than a promised raw public-use field. Merely renaming a survey file will not make it a valid input. Record the official data citations, original filenames, and download dates when reconstructing the inputs.
+## Software
 
-## Included research code
+Install Python packages with `pip install -r requirements.txt`. Jupyter is needed for the preparation/analysis notebooks.
 
-The repository now includes data-construction and main-analysis source in `research/`, in addition to the focused utilities described below. See [Research workflow](RESEARCH_WORKFLOW.md) for the file-by-file roles, execution order, and unresolved input handoffs. The earlier selection-only completeness inventory has been superseded by that workflow; full numerical replication has not been certified.
-
-## Featured code: selection diagnostic
-
-`selection_check.py` is a refactored extract of the original exploratory notebook's pooled probit specification. It asks whether unemployment at bachelor's graduation predicts later master's attainment, controlling for demographic characteristics and a quadratic graduation-cohort trend. Standard errors are clustered by bachelor's graduation cohort.
-
-This is a selection diagnostic, not an instrument or a causal estimate of the return to a master's degree. It does not eliminate selection on unobserved characteristics.
-
-```sh
-python code/selection_check.py --demo --output /tmp/education-demo
-python code/selection_check.py --input /path/to/prepared.csv --output /path/to/results
-```
-
-The demo generates artificial observations to exercise the workflow; its estimates are not research findings. Real input must already be cleaned and coded using the project's conventions.
-
-| Column | Meaning |
-| --- | --- |
-| `assigned_id` | Respondent identifier used to keep the latest observation |
-| `REFYR` | Survey reference year |
-| `BAYR` | Bachelor's graduation year |
-| `DGRDG` | Degree category; 2 identifies master's attainment in this sample |
-| `UR` | Unemployment rate at bachelor's graduation, in percentage points |
-| `GENDER`, `RACEM` | Gender and race categories |
-| `AGE` | Age |
-| `EDMOM`, `EDDAD` | Parental education categories |
-
-The script reports the probit coefficient, standard error and p-value for `UR`; the coefficient is not a probability marginal effect. It excludes cohorts from 2020 onward, consistent with the selected notebook specification. The full paper's sample construction is upstream and is not reproduced here.
+Dependencies are not a fully pinned environment. See [Validation](VALIDATION.md) for what was and was not executed.

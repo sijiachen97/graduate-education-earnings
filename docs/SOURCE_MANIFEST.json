@@ -1,113 +1,179 @@
 [
   {
-    "file": "research/balance-table.ipynb",
-    "original_relative_path": "balance-table.ipynb",
-    "source_sha256": "3c44b4c700ce32bc4eec6c491bdd17fed8b551c103aca7482fe39d7020377817",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "385f98bbbc6b5ee0bfd5b4a674e1d1b9108d579af2fafcd9a34419cd61403fb6"
-  },
-  {
-    "file": "research/by-degree-type-field-transition.ipynb",
-    "original_relative_path": "by-degree-type-field-transition.ipynb",
-    "source_sha256": "e912a1b6394753a4b11642b199ac31aed422ce19a4696617aefd6986736f2055",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "9cb113905936a3b19250ba065ffb37da3c6148fcb1f086e68541e8dce5ac5721"
-  },
-  {
-    "file": "research/endogeneity.ipynb",
-    "original_relative_path": "endogeneity.ipynb",
-    "source_sha256": "86fc77b50825b55bd10fc73d580273c474ce1dcdc9aaf0d4924ca9e784059944",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Corrected reversed male/female subgroup labels in copied notebook; no results re-estimated.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "8dcca0b6d8f936e2d76cb385f58f7b474b1c24aa05f34e6625fb930f6265da98"
-  },
-  {
-    "file": "research/field-transition analysis.ipynb",
-    "original_relative_path": "field-transition analysis.ipynb",
-    "source_sha256": "74f445e03b95e0a6ca7e6351457745d8436c078a6e523fdc5032e6fe3b10ff5e",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "4514b060530000dd3ce1540141dee8d24a5c87f4327b7f11189fa8e708aca7b1"
-  },
-  {
-    "file": "research/field-transition-regressions.ipynb",
-    "original_relative_path": "field-transition-regressions.ipynb",
-    "source_sha256": "b5ce08cb5522334681ad986c0485facdb7a9aaf30cc5ef85235172a4158f3a72",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "2c877b238444fb81288eba10998b785eb20126c15bfe3918ea80abd8809628db"
-  },
-  {
-    "file": "research/matching.ipynb",
-    "original_relative_path": "matching.ipynb",
-    "source_sha256": "1c2552eb850402c3ff2a51a629af8c6d14d7d5cd6557e04cd4802e8092a8a90f",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "15bb870d51912ab89f34d8d3233e32f3ed0b1a126f8e66a0520a3c405e7894c3"
-  },
-  {
-    "file": "research/merge-save-data.ipynb",
-    "original_relative_path": "merge-save-data.ipynb",
-    "source_sha256": "5f8f4e7e954f069c7773b43b7106fd97326c4a2fe643d140c592750ad681dbfd",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "9a56be2793fcb3c86f673b360077d6da27f78d597e3c653f919e692bc751d6b6"
-  },
-  {
-    "file": "research/prepare-data-for-matching.ipynb",
+    "file": "code/data_process/01_import_harmonize_nscg.ipynb",
     "original_relative_path": "prepare-data-for-matching.ipynb",
     "source_sha256": "5d2860c1f561c3085c3ac99cc15d197012c26df56677c6d61976b71dfa2d2da1",
+    "published_sha256": "abace8e0b4eb0c6a404acf71b23c3c979c6a1e608ee8803f46ec5855b8476f45",
+    "original_cell_indices": null,
+    "evidence": "Creates update_merged_nscg_2010_to_2021.csv read by matching notebook.",
     "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "a6cc7029a9c35126893c36873ecb4431e9829ec28dd4fd0e125dee4f3b4626eb"
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
   },
   {
-    "file": "research/regressions-alter-ur.ipynb",
-    "original_relative_path": "regressions-alter-ur.ipynb",
-    "source_sha256": "b79372b2fce2a08249795cfb21590154db7195d3c2028dd78eca8d486f9643fe",
+    "file": "code/data_process/02_link_respondents.ipynb",
+    "original_relative_path": "matching.ipynb",
+    "source_sha256": "1c2552eb850402c3ff2a51a629af8c6d14d7d5cd6557e04cd4802e8092a8a90f",
+    "published_sha256": "49680974cfb79e2978e3bf2c6f62f06ea23bed428ba53244ed9bcb07d564c651",
+    "original_cell_indices": null,
+    "evidence": "Constructs assigned_id and writes matched_df.csv used by final-data preparation.",
     "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
-    ],
-    "published_sha256": "e3de8dcb82a5ae7459d9060b1df053e1c9c18e7c0a967a9f5ad0357272e69170"
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
   },
   {
-    "file": "research/regressions-for-non-repeated-respondents.ipynb",
+    "file": "code/data_process/03_build_analysis_data.ipynb",
     "original_relative_path": "regressions-for-non-repeated-respondents.ipynb",
     "source_sha256": "be0fec2de740deeb32053ed667a0169e503479ff7f26bbe75386ec152a98550a",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
+    "published_sha256": "187cb825d12eaf58cadea6dd85d1233c28af1595cfdc83e850eb8ff9a32bc0ab",
+    "original_cell_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
     ],
-    "published_sha256": "0850a487f2d9d9b7b375c6079d56e5463ffb17be30925fde6c4fb8fae706ca47"
+    "evidence": "Cells 0\u201316 contain actual matched_df.csv \u2192 df_final.csv export; later alternative regressions omitted.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
   },
   {
-    "file": "research/regressions.ipynb",
-    "original_relative_path": "regressions.ipynb",
-    "source_sha256": "be2c421bc43e24f862d1432877a635faa793aca6673ee3c68d936cb0ed450fb3",
-    "changes": [
-      "Cleared saved outputs, execution counts and cell metadata; code order preserved.",
-      "Replaced original project-root paths with working-directory-relative paths. Run from research/. Legacy external input paths still require configuration."
+    "file": "code/analysis/01_main_earnings.ipynb",
+    "original_relative_path": "look into-regressions-UR-version.ipynb",
+    "source_sha256": "5d68a5a2e18cebf80c2df93f3046a30affd6efcc33d25a245763ecfe7623c91b",
+    "published_sha256": "10db0c97d31b49f83fcffa4eb6fb6c0c95a25767ec1783acd4d7369dd28d7419",
+    "original_cell_indices": [
+      0,
+      1,
+      3,
+      5,
+      8,
+      9,
+      19
     ],
-    "published_sha256": "efe84acd124c285c2560723e998f5218233861899f5d2573cf92f29b85638d97"
+    "evidence": "Cells 0,1,3,5,8,9,19 reproduce Table 3: N=169092, BA=-0.0190876725, interaction=0.0243328957; Figure 3 plotting function in cell 19.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
+  },
+  {
+    "file": "code/analysis/02_selection_composition.ipynb",
+    "original_relative_path": "endogeneity.ipynb",
+    "source_sha256": "86fc77b50825b55bd10fc73d580273c474ce1dcdc9aaf0d4924ca9e784059944",
+    "published_sha256": "5455bc0c848a789ba3304f231268f9de228f4ffb3ab7d166065b1861e104dd50",
+    "original_cell_indices": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      13,
+      14,
+      15
+    ],
+    "evidence": "Table 2 pooled probit output 0.0218 at original cell 6, plus composition figures.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup.",
+      "Corrected reversed gender subgroup labels from original cell 7; Appendix A2 labels require rechecking. Pooled model unchanged."
+    ]
+  },
+  {
+    "file": "code/analysis/03_descriptive_tables.ipynb",
+    "original_relative_path": "balance-table.ipynb",
+    "source_sha256": "3c44b4c700ce32bc4eec6c491bdd17fed8b551c103aca7482fe39d7020377817",
+    "published_sha256": "59b2dc152c81b933b942f4c65b0c6facfd08cf09165f48aa7d178f1dee1de0fd",
+    "original_cell_indices": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      18,
+      20
+    ],
+    "evidence": "Table 1 cohort counts (cell12), Appendix respondent frequency (cell18), sample N169092.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
+  },
+  {
+    "file": "code/analysis/04_field_transitions.ipynb",
+    "original_relative_path": "field-transition-regressions.ipynb",
+    "source_sha256": "b5ce08cb5522334681ad986c0485facdb7a9aaf30cc5ef85235172a4158f3a72",
+    "published_sha256": "78043b9f200b7efef1f805f07a0833db8f90966068fffe269a1d7f2e347cc75f",
+    "original_cell_indices": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      16,
+      17,
+      18,
+      19
+    ],
+    "evidence": "Field-switching models and residual plots in final paper.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
+  },
+  {
+    "file": "code/analysis/05_field_heterogeneity.ipynb",
+    "original_relative_path": "by-degree-type-field-transition.ipynb",
+    "source_sha256": "e912a1b6394753a4b11642b199ac31aed422ce19a4696617aefd6986736f2055",
+    "published_sha256": "e353ebd76b94b190f5b9e3f2f2c6e6961465cc7c403c2933b56d1b41168863d8",
+    "original_cell_indices": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      12,
+      13,
+      14,
+      15,
+      18,
+      19
+    ],
+    "evidence": "Table 4 field-specific coefficients, Figure 4 and Appendix Figure A1.",
+    "changes": [
+      "Notebook outputs and execution counts removed.",
+      "Project root is repository working directory; statistical specifications retained.",
+      "Consolidated under code/data_process or code/analysis; updated source paths and notebook root setup."
+    ]
   }
 ]

@@ -1,5 +1,7 @@
 numpy
 pandas
-pyarrow
-requests
+scipy
 statsmodels
+matplotlib
+seaborn
+jupyter

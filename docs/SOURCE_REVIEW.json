@@ -1,0 +1,104 @@
+[
+  {
+    "source": "look into-regressions-UR-version.ipynb",
+    "status": "selected",
+    "reason": "Cells 0,1,3,5,8,9,19 reproduce Table 3: N=169092, BA=-0.0190876725, interaction=0.0243328957; Figure 3 plotting function in cell 19.",
+    "sha256": "5d68a5a2e18cebf80c2df93f3046a30affd6efcc33d25a245763ecfe7623c91b"
+  },
+  {
+    "source": "endogeneity.ipynb",
+    "status": "selected",
+    "reason": "Table 2 pooled probit output 0.0218 at original cell 6, plus composition figures.",
+    "sha256": "86fc77b50825b55bd10fc73d580273c474ce1dcdc9aaf0d4924ca9e784059944"
+  },
+  {
+    "source": "prepare-data-for-matching.ipynb",
+    "status": "selected",
+    "reason": "Creates update_merged_nscg_2010_to_2021.csv read by matching notebook.",
+    "sha256": "5d2860c1f561c3085c3ac99cc15d197012c26df56677c6d61976b71dfa2d2da1"
+  },
+  {
+    "source": "regressions.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "be2c421bc43e24f862d1432877a635faa793aca6673ee3c68d936cb0ed450fb3"
+  },
+  {
+    "source": "dive_mismatch.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "321262f7c8c2aa6eeb63fcfe1d8abf94bbcc6c2aa5967ddc2f3b70fb1b3f33fc"
+  },
+  {
+    "source": "look into-regressions.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "c5bd4f1a7e0b4e9c61973d62ba2ed5ed5ff90eedd4818d9bd99e1c5b4ff065dd"
+  },
+  {
+    "source": "merge-save-data.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "5f8f4e7e954f069c7773b43b7106fd97326c4a2fe643d140c592750ad681dbfd"
+  },
+  {
+    "source": "matching.ipynb",
+    "status": "selected",
+    "reason": "Constructs assigned_id and writes matched_df.csv used by final-data preparation.",
+    "sha256": "1c2552eb850402c3ff2a51a629af8c6d14d7d5cd6557e04cd4802e8092a8a90f"
+  },
+  {
+    "source": "Pytorch.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "325f67ffbb4d2d996b7c2f197e499d59f4600fe7e823e1f3aa2ebc7cbe42558e"
+  },
+  {
+    "source": "describe-data.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "fc43cbda275e20af856b958cc062c445ed7e7cfd1eb8902be39dc09f04b95f55"
+  },
+  {
+    "source": "regressions-alter-ur.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "b79372b2fce2a08249795cfb21590154db7195d3c2028dd78eca8d486f9643fe"
+  },
+  {
+    "source": "balance-table.ipynb",
+    "status": "selected",
+    "reason": "Table 1 cohort counts (cell12), Appendix respondent frequency (cell18), sample N169092.",
+    "sha256": "3c44b4c700ce32bc4eec6c491bdd17fed8b551c103aca7482fe39d7020377817"
+  },
+  {
+    "source": "by-degree-type-field-transition.ipynb",
+    "status": "selected",
+    "reason": "Table 4 field-specific coefficients, Figure 4 and Appendix Figure A1.",
+    "sha256": "e912a1b6394753a4b11642b199ac31aed422ce19a4696617aefd6986736f2055"
+  },
+  {
+    "source": "field-transition-regressions.ipynb",
+    "status": "selected",
+    "reason": "Field-switching models and residual plots in final paper.",
+    "sha256": "b5ce08cb5522334681ad986c0485facdb7a9aaf30cc5ef85235172a4158f3a72"
+  },
+  {
+    "source": "test.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "503e15f66632db8f786e409a99c85b5fdf25c3f594995a77276849a4a43cd3dc"
+  },
+  {
+    "source": "field-transition analysis.ipynb",
+    "status": "excluded",
+    "reason": "Exploratory, superseded, or not on the verified final output/dependency path; excluded from the shareable main code.",
+    "sha256": "74f445e03b95e0a6ca7e6351457745d8436c078a6e523fdc5032e6fe3b10ff5e"
+  },
+  {
+    "source": "regressions-for-non-repeated-respondents.ipynb",
+    "status": "selected",
+    "reason": "Cells 0\u201316 contain actual matched_df.csv \u2192 df_final.csv export; later alternative regressions omitted.",
+    "sha256": "be0fec2de740deeb32053ed667a0169e503479ff7f26bbe75386ec152a98550a"
+  }
+]

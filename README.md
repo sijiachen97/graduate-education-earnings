@@ -33,16 +33,12 @@ The probit controls for gender, race, age, parental education, and linear and qu
 
 ## Code and reproducibility
 
-The [code guide](docs/CODE_GUIDE.md) documents a refactored pooled selection-check script, its input schema, and a synthetic demonstration. The synthetic data test the workflow and do not reproduce the paper's estimates.
+All code is organized in one directory:
 
-```sh
-pip install -r requirements.txt
-python code/selection_check.py --demo --output /tmp/education-demo
+```text
+code/
+  data_process/   # source-data cleaning and analysis-data construction
+  analysis/       # final specifications, robustness checks, tables and figures
 ```
 
-[Validation](docs/VALIDATION.md) · [Sources and code provenance](docs/SOURCES.md)
-
-## Research code: data construction through estimation
-
-The [`research/`](research/) directory includes the original data-preparation and main-analysis code, with notebook outputs removed. Start with the [research workflow](docs/RESEARCH_WORKFLOW.md) for the analysis sequence and remaining replication gaps; [CODE_GUIDE](docs/CODE_GUIDE.md) lists data download sources. [Source manifest](docs/SOURCE_MANIFEST.json) documents provenance and adaptations.
-
+Start with the [code guide](docs/CODE_GUIDE.md) for the run order, source-data downloads and the mapping to the final paper/slides. [Validation](docs/VALIDATION.md) distinguishes executed checks from unresolved replication steps. [Source manifest](docs/SOURCE_MANIFEST.json) records original files and selected notebook cells.
