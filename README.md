@@ -41,3 +41,8 @@ python code/selection_check.py --demo --output /tmp/education-demo
 ```
 
 [Validation](docs/VALIDATION.md) · [Sources and code provenance](docs/SOURCES.md)
+
+## Research code: data construction through estimation
+
+The [`research/`](research/) directory includes the original data-preparation and main-analysis code, with notebook outputs removed. Start with the [research workflow](docs/RESEARCH_WORKFLOW.md) for the analysis sequence and remaining replication gaps; [CODE_GUIDE](docs/CODE_GUIDE.md) lists data download sources. [Source manifest](docs/SOURCE_MANIFEST.json) documents provenance and adaptations.
+

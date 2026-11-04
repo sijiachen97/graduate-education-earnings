@@ -11,20 +11,9 @@ Links checked November 4, 2026.
 
 The current CLI expects an already prepared CSV, **not** a raw NSCG download. `assigned_id` is a project-generated identifier rather than a promised raw public-use field. Merely renaming a survey file will not make it a valid input. Record the official data citations, original filenames, and download dates when reconstructing the inputs.
 
-## Completeness review
+## Included research code
 
-| Stage | Included? | What is still needed |
-| --- | --- | --- |
-| Raw-wave import and harmonization | No | Clean scripts extracted from the original preparation notebooks |
-| Respondent-ID construction and validation | No | Documented linkage logic and validation; do not distribute respondent-level notebook outputs |
-| Graduation-year unemployment merge | No | Confirm original series and aggregation, then include the merge script |
-| Pooled master's-attainment probit | Yes | Prepared input satisfying the schema below |
-| Earnings regressions and reported coefficient combinations | No | Final specification from `regressions.ipynb`, with its sample and inference settings |
-| Composition/field-switching checks and figure generation | No | Selected, validated notebook code and all upstream variables |
-
-The included selection script is a refactoring, not a certified replication of paper Table 2. It explicitly filters complete cases and retains the latest respondent observation; real-data estimates still need comparison with the original notebook. Its `<2020` cohort filter also needs reconciliation with the paper's stated earnings sample of 2000–2018 before a full replication release. The synthetic demonstration checks execution only.
-
-This project examines how the association between labor market conditions at bachelor's graduation and later earnings differs by subsequent master's attainment. The broader research uses repeated NSCG survey waves and earnings regressions.
+The repository now includes data-construction and main-analysis source in `research/`, in addition to the focused utilities described below. See [Research workflow](RESEARCH_WORKFLOW.md) for the file-by-file roles, execution order, and unresolved input handoffs. The earlier selection-only completeness inventory has been superseded by that workflow; full numerical replication has not been certified.
 
 ## Featured code: selection diagnostic
 
