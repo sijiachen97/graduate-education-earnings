@@ -1,5 +1,29 @@
 # Graduate education and initial labor market conditions
 
+## Source data: where to download
+
+Links checked November 4, 2026.
+
+| Source | Download instructions | Preparation still required |
+| --- | --- | --- |
+| National Survey of College Graduates | [NCSES public-use microdata](https://ncses.nsf.gov/explore-data/microdata), select NSCG. Download the 2010, 2013, 2015, 2017, 2019, and 2021 survey files and their codebooks. The [NSCG survey page](https://ncses.nsf.gov/surveys/national-survey-college-graduates) provides survey documentation and access to earlier cycles. | Harmonize variables and missing-value codes across waves, construct degree/sample variables, and reproduce the project's respondent linkage. |
+| Unemployment at bachelor's graduation | [BLS CPS labor-force statistics](https://www.bls.gov/cps/) is the source portal to consult when documenting the original series. | The exact series ID, population/age definition, seasonal adjustment, annual aggregation, and mapping into `UR` still require verification against the original preparation code. No replacement series is prescribed here. |
+
+The current CLI expects an already prepared CSV, **not** a raw NSCG download. `assigned_id` is a project-generated identifier rather than a promised raw public-use field. Merely renaming a survey file will not make it a valid input. Record the official data citations, original filenames, and download dates when reconstructing the inputs.
+
+## Completeness review
+
+| Stage | Included? | What is still needed |
+| --- | --- | --- |
+| Raw-wave import and harmonization | No | Clean scripts extracted from the original preparation notebooks |
+| Respondent-ID construction and validation | No | Documented linkage logic and validation; do not distribute respondent-level notebook outputs |
+| Graduation-year unemployment merge | No | Confirm original series and aggregation, then include the merge script |
+| Pooled master's-attainment probit | Yes | Prepared input satisfying the schema below |
+| Earnings regressions and reported coefficient combinations | No | Final specification from `regressions.ipynb`, with its sample and inference settings |
+| Composition/field-switching checks and figure generation | No | Selected, validated notebook code and all upstream variables |
+
+The included selection script is a refactoring, not a certified replication of paper Table 2. It explicitly filters complete cases and retains the latest respondent observation; real-data estimates still need comparison with the original notebook. Its `<2020` cohort filter also needs reconciliation with the paper's stated earnings sample of 2000–2018 before a full replication release. The synthetic demonstration checks execution only.
+
 This project examines how the association between labor market conditions at bachelor's graduation and later earnings differs by subsequent master's attainment. The broader research uses repeated NSCG survey waves and earnings regressions.
 
 ## Featured code: selection diagnostic
