@@ -1,6 +1,6 @@
 # Validation and remaining issues
 
-Consolidation checks, November 4, 2026: 0 R files, 0 Python files, 8 notebooks (127 code cells), and 0 shell entrypoints passed syntax checks. Notebook outputs and execution counts were cleared. Source hashes and adapted-file hashes are in SOURCE_MANIFEST.json.
+Consolidation checks, November 4, 2026: 0 R files, 0 Python files, 8 notebooks (128 code cells), and 0 shell entrypoints passed syntax checks. Notebook outputs and execution counts were cleared. Source hashes and adapted-file hashes are in SOURCE_MANIFEST.json.
 
 The consolidated `code/analysis/01_main_earnings.ipynb` was executed against the existing local `df_final.csv` and original unemployment CSV. Results match final paper Table 3 after rounding:
 

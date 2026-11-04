@@ -154,7 +154,7 @@
     "file": "code/analysis/05_field_heterogeneity.ipynb",
     "original_relative_path": "by-degree-type-field-transition.ipynb",
     "source_sha256": "e912a1b6394753a4b11642b199ac31aed422ce19a4696617aefd6986736f2055",
-    "published_sha256": "e353ebd76b94b190f5b9e3f2f2c6e6961465cc7c403c2933b56d1b41168863d8",
+    "published_sha256": "40f182a57128797e5f5f201a08d7f176541c43393cb44aff43bc9b0352bc7330",
     "original_cell_indices": [
       0,
       1,
@@ -162,6 +162,7 @@
       3,
       7,
       8,
+      10,
       12,
       13,
       14,
